@@ -1,5 +1,5 @@
 body {
-    background-color: #f7e2e8; /* Fundo rosa claro ou cor que ela ama */
+    background-color: #e2e6f7; /* Fundo rosa claro ou cor que ela ama */
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -20,16 +20,16 @@ body {
 }
 
 .title {
-    color: #d64977; /* Cor de destaque (rosa mais forte/vermelho) */
-    font-size: 2.5em;
+    color: #295ff5; /* Cor de destaque (rosa mais forte/vermelho) */
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Tamanho responsivo do título */
     margin-bottom: 20px;
-    border-bottom: 2px solid #f7e2e8;
+    border-bottom: 2px solid #e2e6f7;
     padding-bottom: 10px;
 }
 
 .message {
     color: #4a4a4a;
-    font-size: 1.2em;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Tamanho responsivo da mensagem */
     line-height: 1.6;
     margin-bottom: 30px;
     text-align: left;
@@ -40,12 +40,13 @@ body {
     font-style: italic;
     color: #6a6a6a;
     margin-bottom: 5px;
+    font-size: clamp(1rem, 2.5vw, 1rem); /* Tamanho responsivo da assinatura */
 }
 
 .sender {
     font-weight: bold;
-    color: #d64977;
-    font-size: 1.1em;
+    color: #295ff5;
+    font-size: clamp(1rem, 3vw, 1.1rem); /* Tamanho responsivo do remetente */
 }
 
 /* Exemplo de estilo para um coração flutuante */
@@ -54,9 +55,10 @@ body {
     position: absolute;
     top: 5%;
     right: 5%;
-    font-size: 3em;
-    opacity: 0.5;
+    font-size: clamp(3rem, 8vw, 6rem); /* Tamanho responsivo: mín 3rem, máx 6rem, baseado em 8% da largura da tela */
+    opacity: 0.9;
     animation: pulse 2s infinite alternate;
+    z-index: 999; /* Garante que o coração fique por cima de tudo */
 }
 
 @keyframes pulse {
@@ -66,7 +68,7 @@ body {
 
 /* Estilos para o envelope */
 .envelope {
-    background-color: #f0a0c0; /* Cor do envelope, um rosa mais escuro */
+    background-color: #295ff5; /* Cor do envelope, um rosa mais escuro */
     border-radius: 10px;
     padding: 50px 30px;
     cursor: pointer; /* Indica que é clicável */
@@ -77,15 +79,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 250px; /* Altura mínima para ser visível */
+    flex-direction: column; /* Coloca os itens em coluna: foto, depois texto */
+    text-align: center; /* Garante que o texto também esteja centralizado */
 }
 
 .envelope:hover {
-    background-color: #d64977; /* Efeito ao passar o mouse */
+    background-color: #10c7f5; /* Efeito ao passar o mouse */
 }
 
 .greeting {
     color: #ffffff;
-    font-size: 1.5em;
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Tamanho responsivo da saudação */
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -131,4 +135,54 @@ body {
     /* Mantém os estilos originais, mas adiciona position: relative */
     position: relative; 
     overflow: hidden; /* Garante que elementos fora do container fiquem escondidos */
+}
+
+.our-photo {
+    max-width: 100%; /* Garante que a imagem não transborde o container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas para um toque suave */
+    margin-bottom: 25px; /* Espaço abaixo da foto e antes do título */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Uma leve sombra */
+}
+
+/* Estilos para a foto no envelope */
+.envelope-photo {
+    max-width: 90%; /* A imagem não ocupará 100% da largura, deixando uma pequena margem */
+    height: auto;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    margin-bottom: 20px; /* Espaço entre a foto e o texto "Clique para abrir!" */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Uma sombra mais suave */
+    display: block; /* Garante que ela se comporte como um bloco para o margin-bottom */
+    margin-left: auto; /* Centraliza a imagem horizontalmente */
+    margin-right: auto; /* Centraliza a imagem horizontalmente */
+}
+
+/* Garante que o texto de saudação se adapte */
+.greeting {
+    margin-top: 15px; /* Adiciona um espaço acima do texto se necessário */
+}
+
+/* Estilos do footer */
+.footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(73, 158, 215, 0.1), rgba(226, 230, 247, 0.3));
+    border-radius: 10px;
+    border-top: 2px solid #e2e6f7;
+}
+
+.footer-text {
+    color: #295ff5;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.footer-date {
+    color: #6a6a6a;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    margin: 0;
+    opacity: 0.8;
 }
