@@ -1,0 +1,67 @@
+body {
+    background-color: #f7e2e8; /* Fundo rosa claro ou cor que ela ama */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-container {
+    background-color: #ffffff; /* Fundo do cartão branco */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.title {
+    color: #d64977; /* Cor de destaque (rosa mais forte/vermelho) */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f7e2e8;
+    padding-bottom: 10px;
+}
+
+.message {
+    color: #4a4a4a;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: left;
+    white-space: pre-line; /* Mantém as quebras de linha (<br>) no HTML */
+}
+
+.signature {
+    font-style: italic;
+    color: #6a6a6a;
+    margin-bottom: 5px;
+}
+
+.sender {
+    font-weight: bold;
+    color: #d64977;
+    font-size: 1.1em;
+}
+
+/* Exemplo de estilo para um coração flutuante */
+.card-container::before {
+    content: '💖';
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 3em;
+    opacity: 0.5;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Você pode adicionar mais estilos e animações aqui! */
